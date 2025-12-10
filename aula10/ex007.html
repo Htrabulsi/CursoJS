@@ -4,16 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somando Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        input[type="number"] {
+            width: 150px;
+            padding: 10px;
+            margin: 10px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="number"] {
+            border: 2px solid #ccc;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+
+        input[type="number"]:focus {
+            border: 2px solid #218838;
+            outline: none;
+        }
+
+        input[type="number"]:focus::placeholder {
+            color: transparent;
+            transition: color 0.3s ease;
+        }
+
+        #Resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1" placeholder="Digite o primeiro número">
-    <input type="number" name="txtn2" id="txtn2" placeholder="Digite o segundo número">
+    <input type="number" name="txtn1" id="txtn1" placeholder="Digite o 1º número">
+    <input type="number" name="txtn2" id="txtn2" placeholder="Digite o 2º número">
     <input type="button" value="Somar" onclick="somar()">
-
-
+    <div id="Resultado">Resultado:</div>
     <script>
-        
+        function somar() {
+            var n1 = Number(document.getElementById('txtn1').value);
+            var n2 = Number(document.querySelector('input#txtn2').value); /* Usando métodos diferentes para demonstração */
+            var resultado = n1 + n2;
+            Resultado.innerHTML = (`A soma de ${n1} + ${n2} é igual a ${resultado}`);
+        }        
     </script>
 </body>
 </html>
